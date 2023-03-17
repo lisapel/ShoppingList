@@ -25,7 +25,14 @@ function shopped() {
     var listItem = this.parentNode;
     if (this.checked) {
         listItem.style.textDecoration = "line-through";
+        setTimeout(function () {
+            deleteItem(listItem);
+        }, 2000);
     } else {
         listItem.style.textDecoration = "none";
     }
+}
+
+function deleteItem(item) {
+    item.remove();
 }
